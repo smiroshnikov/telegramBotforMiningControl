@@ -90,8 +90,13 @@ ac03068633.withdraw(3000)
 print(ac03068633.balance())
 
 
-my_list = [1.0 , 'a', True]
+my_list = [1.0 , 'a',[1,2,3,4,5,6,7,8], {1:2},  True]
+
 if int(my_list[0])<my_list[-1]:
     print "Hey"
 else:
     print(int(my_list[-1]))
+
+
+print my_list[1::2] #stepping , we have a step of 2
+print my_list[1:4]
