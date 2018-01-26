@@ -39,7 +39,7 @@
 # print(bool(None))
 # print(None)
 #
-# a_word = "insread of camelCase"
+# a_word = "instead of camelCase"
 # print(a_word)
 
 item1 = [1, 2, 3, 4, 5, 6]
@@ -98,5 +98,5 @@ else:
     print(int(my_list[-1]))
 
 
-print my_list[1::2] #stepping , we have a step of 2
+print my_list[1::2] #stepping , we have a step  of 2
 print my_list[1:4]
