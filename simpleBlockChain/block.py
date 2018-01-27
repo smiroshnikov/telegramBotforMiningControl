@@ -50,16 +50,23 @@ def check_block_integrity():
     2. Recalculate previous block's hash
     3. Compare 1 and 2
     :return: boolean result
-    """
 
+    """
     blockchain_dir = os.curdir + '/blockchain/'
     files = os.listdir(blockchain_dir)
     files = sorted([int(i) for i in files])
 
     for block_file in files[1:]:
         # first element is not included , hence it has empty hash
-        # file_hash =  json.load(open(blockchain_dir + str(block_file)))['hash']
-        print(json.load(open(blockchain_dir + str(block_file)))['hash'])
+        f = open(blockchain_dir + str(block_file))
+        file_hash =json.load(f)['hash']
+        # к json обращаюсь по ключу
+        # print(json.load(open(blockchain_dir + str(block_file)))['hash'])
+        # print(json.load(open(blockchain_dir + str(block_file))))
+        # print(file_hash)
+        recalculated_hash = get_hash(str(block_file -1))
+        # print(recalculated_hash)
+        return True if recalculated_hash == file_hash else False
 
 
 def main():
@@ -68,7 +75,7 @@ def main():
     # write_block_to_file("Sergey Miroshnikov", "Evgeniya Miroshnikov", 1)
     # write_block_to_file("Sergey Miroshnikov", "Alexander Gulbit", 0.5)
     # write_block_to_file("Sergey Miroshnikov", "Dina Gulbit", 1.5)
-    check_block_integrity()
+    print(check_block_integrity())
 
 
 if __name__ == '__main__':
