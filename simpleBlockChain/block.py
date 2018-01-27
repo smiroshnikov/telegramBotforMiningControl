@@ -59,14 +59,22 @@ def check_block_integrity():
     for block_file in files[1:]:
         # first element is not included , hence it has empty hash
         f = open(blockchain_dir + str(block_file))
-        file_hash =json.load(f)['hash']
+        file_hash = json.load(f)['hash']
         # к json обращаюсь по ключу
         # print(json.load(open(blockchain_dir + str(block_file)))['hash'])
         # print(json.load(open(blockchain_dir + str(block_file))))
-        # print(file_hash)
-        recalculated_hash = get_hash(str(block_file -1))
-        # print(recalculated_hash)
-        return True if recalculated_hash == file_hash else False
+        print(file_hash)
+        recalculated_hash = get_hash(str(block_file - 1))
+        print(recalculated_hash)
+        # return True if recalculated_hash == file_hash else False
+        if recalculated_hash != file_hash:
+            result = False
+            erroneous_block_number = str(block_file)
+            print("ERROR! Block number <<" + erroneous_block_number + ">> hash has been ALTERED! ERROR!")
+            break
+        else:
+            result = True
+    return result
 
 
 def main():
