@@ -9,14 +9,30 @@ def main():
 def write_block_to_file(name, amount, recipient, previous_hash=''):
     blockchain_dir = os.curdir + '/blockchain/'
 
-    data = {"name": name,
-            "amount": amount,
-            "recipient": recipient,
-            "hash": previous_hash
-            }
+    files_in_folder = os.listdir(blockchain_dir)
 
-    with open(blockchain_dir + "test", "w") as block_file:
-        json.dump(data, block_file, indent=4, ensure_ascii=False)
+    """
+    if i want to use numeric convention for block files , i have to sort it after converting file name to int
+    if i decide to go with strings , then wrapping in sorted should do
+    """
+    # print(files_in_folder)
+    # print("files are sorted")
+    # print(sorted(files_in_folder))
+    """
+    for now I decided to go numerical 
+    """
+    files_in_folder = sorted([int(i) for i in files_in_folder])
+    print (files_in_folder)
+
+    # data = {"name": name,
+    #         "amount": amount,
+    #         "recipient": recipient,
+    #         "hash": previous_hash
+    #         }
+    #
+    # with open(blockchain_dir + "test", "w") as block_file:
+    #     json.dump(data, block_file, indent=4, ensure_ascii=False)
+    #
 
 
 if __name__ == '__main__':
