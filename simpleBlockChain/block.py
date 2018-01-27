@@ -1,18 +1,21 @@
 import json
+import os
 
 
 def main():
-    write_block_to_file("Kozel Petrovich", 10 , "Ivan Ivanov" , "1111111" )
+    write_block_to_file("Kozel Petrovich", 10, "Ivan Ivanov", "1111111")
 
 
-def write_block_to_file(name, amount, recipient , hash):
+def write_block_to_file(name, amount, recipient, previous_hash=''):
+    blockchain_dir = os.curdir + '/blockchain/'
+
     data = {"name": name,
             "amount": amount,
             "recipient": recipient,
-            "hash": hash
+            "hash": previous_hash
             }
 
-    with open("test", "w") as block_file:
+    with open(blockchain_dir + "test", "w") as block_file:
         json.dump(data, block_file, indent=4, ensure_ascii=False)
 
 
