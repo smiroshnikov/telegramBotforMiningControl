@@ -1,6 +1,7 @@
 import json
 import os
 import hashlib
+import filecmp
 
 
 def get_hash(filename):
@@ -84,6 +85,8 @@ def main():
     # write_block_to_file("Sergey Miroshnikov", "Alexander Gulbit", 0.5)
     # write_block_to_file("Sergey Miroshnikov", "Dina Gulbit", 1.5)
     print(check_block_integrity())
+    s = "abcdef"
+    print(s[::-1])
 
 
 if __name__ == '__main__':
