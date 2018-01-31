@@ -1,7 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome("/Users/smiroshn/work/chromedriver/chromedriver")
+MAC_PATH = "/Users/smiroshn/work/chromedriver/chromedriver"
+WIN_PATH = "H:\Webdrivers\chromedriver_win32\chromedriver.exe"
+
+driver = webdriver.Chrome(WIN_PATH)
+# add OS selection dialogue
+
 driver.get("http://python.org")
 assert "Python" in driver.title
 elem = driver.find_element_by_name("q")
@@ -11,7 +16,7 @@ elem.send_keys(Keys.RETURN)
 driver.implicitly_wait(5)
 assert "No results found." in driver.page_source
 if "No results found" in driver.page_source:
-    print "No result found as expected !"
+    print("No result found as expected !")
 news_button = driver.find_element_by_xpath("//li[contains(@id,'news')]/a")
 news_button.click()
 

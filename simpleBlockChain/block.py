@@ -2,6 +2,7 @@ import json
 import os
 import hashlib
 import filecmp
+import selenium
 
 
 def get_hash(filename):
