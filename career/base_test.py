@@ -2,7 +2,7 @@ import string
 
 print(string.ascii_lowercase[::-1])
 
-with open('sowpods.txt') as f:  # diffrence between using file and with
+with open('sowpods.txt') as f:  # difference between using file and with
     lines = f.readlines()
     lines = [line for line in lines]  # convert lines into string
     print(len(lines))
@@ -20,7 +20,7 @@ def count_words_that_start_with_letter(word_list, letter='A'):
 def check_if_any_double_letter_exist(word_list):
     creepy_word_list = []
 
-    for letter in string.ascii_lowercase:
+    for letter in string.ascii_uppercase:
         exists = False
         for word in word_list:
             if letter * 2 in word_list:
