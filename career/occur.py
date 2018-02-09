@@ -1,6 +1,3 @@
-import operator
-import re
-
 
 def occurance_of_words_file(N_most_occured_words, file_path):
     dict = {}

@@ -4,6 +4,8 @@ import multiprocessing
 
 import time
 
+import os
+
 Scientist = collections.namedtuple('Scientist', [
     'name',
     'field',
@@ -24,20 +26,11 @@ scientists = {
 
 
 def transform(x):
-    print(f'Processing record {x.name}')
+    print(f'Processing record {x.name}' + "process running job is : " f'{os.getpid()}')
     time.sleep(1)
     result = {'name': x.name, 'age': 2017 - x.born}
     print(f'Done processing record {x.name}')
     return result
-
-
-#       SINGLE PROCESS
-# mapped_result = tuple(map(
-#     transform,
-#     scientists
-# ))
-
-#       MULTI  PROCESS
 
 
 if __name__ == "__main__":
@@ -46,7 +39,16 @@ if __name__ == "__main__":
     pool = multiprocessing.Pool()
     result = pool.map(transform, scientists)
     end = time.time()
-    print()
     print(f'Time to complete: {end - start:.2f}')
-    print()
+    pprint(result)
+
+    print("Now single_process for comparison \n")
+    start = time.time()
+
+    mapped_result = tuple(map(
+        transform,
+        scientists
+    ))
+    end = time.time()
+    print(f'Time to complete: {end - start:.2f}')
     pprint(result)
