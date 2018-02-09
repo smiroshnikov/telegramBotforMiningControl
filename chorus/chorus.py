@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 # constants
 MAC_PATH = "/Users/smiroshn/work/chromedriver/chromedriver"
 WIN_PATH = "H:\Webdrivers\chromedriver_win32\chromedriver.exe"
-CREEDENTIALS = {"automation@gmail.com": "rhrDBWT78iwU"}
+CREEDENTIALS = ["automation@gmail.com", "rhrDBWT78iwU"]
 USER_ACC_URL = "https://chorus.ai/blueprint/205426"
 DRIVER = webdriver.WebDriver(WIN_PATH)
 
@@ -30,13 +30,13 @@ class ChorusHW:
         email_box_element = self.driver.find_element_by_xpath(email_box)
         email_box_element.click()
         email_box_element.clear()  # just in case
-        email_box_element.send_keys(credentials.keys()[0])
+        email_box_element.send_keys(credentials[0])
         email_box_element.send_keys(Keys.RETURN)
-        self.driver.implicitly_wait(2)
+        self.driver.implicitly_wait(5)  # not too elegant
         password_box = "//input[@name='password']"
         password_box_element = self.driver.find_element_by_xpath(password_box)
         password_box_element.click()
-        password_box_element.send_keys(credentials.values(credentials.keys()[0]))
+        password_box_element.send_keys(credentials[1])
         password_box_element.send_keys(Keys.RETURN)
 
 
