@@ -1,0 +1,15 @@
+1) navigating to a link , resulted in  a dsashboard with (foilders?) , within each folder , calls were present .
+2) testing was performed in automation folder
+3) search in transcript numeric result are irrelevant (automation test)
+4) move remove and download on transcript page (automation tests)
+
+
+
+
+
+//a[contains(@href, 'Results.aspx')]
+
+find_element_by_xpath('//a[text()="Taree"]').click()
+
+
+webDriver.findElement(By.xpath("//a[@href='/docs/configuration']")).click();
