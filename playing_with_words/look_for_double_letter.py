@@ -1,7 +1,5 @@
 import string
-
 import time
-
 import multiprocessing
 
 
@@ -52,6 +50,4 @@ max words argument == 2
 dick 1900 raz 
 penis 3500
 hashtable
-
-
 """

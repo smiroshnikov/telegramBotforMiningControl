@@ -66,22 +66,20 @@ class Account(object):
         self.Balance += amount
         print("New balance is :", self.Balance)
 
-    def withdraw(self,amount):
+    def withdraw(self, amount):
         if self.Balance < amount:
             print("Insufficient funds")
             return False
         else:
-            print("remaning balance after withdrawal " , self.Balance - amount)
+            print("remaning balance after withdrawal ", self.Balance - amount)
             self.Balance -= amount
             return True
-
 
     def balance(self):
         return self.Balance
 
 
-
-ac03068633 = Account("Sergeim", "03068633", 100000000 )
+ac03068633 = Account("Sergeim", "03068633", 100000000)
 
 print(ac03068633.balance())
 ac03068633.deposit(2000)
@@ -89,14 +87,14 @@ print(ac03068633.balance())
 ac03068633.withdraw(3000)
 print(ac03068633.balance())
 
+my_list = [1.0, 'a', [1, 2, 3, 4, 5, 6, 7, 8], {1: 2}, True]
 
-my_list = [1.0 , 'a',[1,2,3,4,5,6,7,8], {1:2},  True]
-
-if int(my_list[0])<my_list[-1]:
-    print "Hey"
+if int(my_list[0]) < my_list[-1]:
+    print("Hey")
 else:
     print(int(my_list[-1]))
 
-
-print my_list[1::2] #stepping , we have a step  of 2
-print my_list[1:4]
+print
+my_list[1::2]  # stepping , we have a step  of 2
+print
+my_list[1:4]
