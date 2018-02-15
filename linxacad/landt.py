@@ -15,9 +15,14 @@ for n in t[::-1]:
 print(t)
 print(reverse_t)
 polindrom_list = t + reverse_t
-
 place = int(len(polindrom_list) / 2)
-
-[polindrom_list[place], polindrom_list[place - 1]] = ["0000" for x in [polindrom_list] if len(polindrom_list) % 2 == 0], 11111
-
+[polindrom_list[place], polindrom_list[place - 1]] = ["0000" for x in [polindrom_list] if
+                                                      len(polindrom_list) % 2 == 0], 11111
 print(polindrom_list)
+print(f"popping -> {str(polindrom_list.pop(4))}")  # if i do not convert this to string type error will occur
+print(polindrom_list)
+
+credentials = "My name is %s %s" % ("Sergei", "Miroshnikov") # not putting this to tuple will result in typeError
+print(credentials)
+
+
