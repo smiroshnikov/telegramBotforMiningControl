@@ -19,6 +19,18 @@ def checkuser(user):
 users = (smiroshnikov, tmiroshnikov, jmiroshnikov, ymiroshnikov)
 line = 1
 for user in users:
-    print(line ,":", checkuser(user))
+    print(line, ":", checkuser(user))
     # checkuser(user)
     line += 1
+
+my_tuple = (1, 2)
+print("%s %s" % my_tuple)
+print([1] is [1])
+s = {(1, 2): "skjdh"}
+
+print(s[(1, 2)])
+
+print(0 or True)
+for x in [1, 2, 3]:
+    print(x)
+print(not 'Bob')
