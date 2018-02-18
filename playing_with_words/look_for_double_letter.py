@@ -27,7 +27,7 @@ def check_if_any_double_letter_exist(word_list):
         if not exists:
             print("there are no english words with double " + letter)
 
-    print(str(len(creepy_word_list)) + "total words in list ")
+    print(str(len(creepy_word_list)) + " total words in list ")
     return creepy_word_list
 
 
