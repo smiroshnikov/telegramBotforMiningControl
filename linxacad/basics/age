@@ -1,0 +1,8 @@
+#!/bin/python
+
+name = input("Whats your name ? : ")
+bod = input("Whats your BOD ? : ")
+age = input("How old are you ? :")
+
+print(f"{name} was bourn on {bod}")
+print(f"Half of your age is {int(age)/2}")
