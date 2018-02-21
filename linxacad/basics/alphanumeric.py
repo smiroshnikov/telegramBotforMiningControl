@@ -15,3 +15,5 @@ for char in x:
 
 
 print(x.count(" "))
+print(x[13:])
+print (x[13:].find(" "))
