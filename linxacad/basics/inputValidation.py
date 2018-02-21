@@ -9,9 +9,16 @@ def validate_user_input(user_data):
     return result
 
 
-height, weight, units = 0, 0, 0
-while True:
-    height = input("Enter height: ")
-    if validate_user_input(height):
-        # if validate_user_input(input("Enter Height :")):
-        break
+def get_user_data(required_parameters):
+    for p in required_parameters:
+        while True:
+            p = input(f"Please enter value ")
+            validate_user_input(p)
+            if validate_user_input(p):
+                break
+
+
+weight, height, units = None, None, None
+rp = [weight, height, units]
+get_user_data(rp)
+print(rp)
