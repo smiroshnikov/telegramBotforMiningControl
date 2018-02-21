@@ -1,12 +1,26 @@
 #!bin/python
 
+def validate_input(input):
+    for e in input:
+        if not e.isdigit():
+            print("only digit input allowed  :")
+            return False
+        else:
+            return True
+
 
 def get_user_data():
     height = input("Whats your height :? (inches or meters) ")
+    while not validate_input(height):
+        print("Please use a numeric value...")
+        height = input("Whats your height :? (inches or meters) ")
+        validate_input(height)
+
+
 
     weight = input("Whats your weight :? (pounds or kilograms) ")
     unit = input("Are your measurements in metric or imperial units ? ").lower().strip()
-    return weight, height, unit
+    return weight, height, unit, stop_flag
 
 
 def calculate_bmi(weight, height, unit="metric"):
@@ -17,8 +31,12 @@ def calculate_bmi(weight, height, unit="metric"):
     return bmi
 
 
-while True:
-    height, weight, unit = get_user_data()
+stop_flag = False
+
+while not stop_flag:
+    height, weight, unit, stop_flag = get_user_data()
+    if stop_flag:
+        break
 
     if (unit.lower().startswith("q") or
             weight.lower().startswith("q") or
