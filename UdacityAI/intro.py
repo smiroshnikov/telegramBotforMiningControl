@@ -5,12 +5,43 @@ if __name__ == "__main__":
     for e in l:
         print(type(e))
 
-    names = ['A', 'B', 'C', 'D', 'E']
-    indexes = range(len(names))
+    # something cool that will probably be asked during interview
+    # a way to quickly store key , value , when everyting is sorted and indexed
 
-zipped = {}
-for index, name in zip(indexes, sorted(names)):
-    # print(index,name)
-    zipped[index] = name
+    letters = ['R', 'A', 'B', 'X', 'E', 'Z', 'C']
 
-print(zipped)
+    indexes = range(len(letters))  # creates an range object that can be used later in zip
+
+    zipped = {}  # dictonary we want to create
+    for index, letter in zip(indexes, sorted(letters)):
+        zipped[index] = letter  # appending to dict
+    print(zipped)
+
+    names = ['John Smith', 'Adam Dom', 'Tim Cook', 'Sundar Pichai', 'Elon Musk', 'Sebastian Thrun', 'Steve Jobs', 'Bill Gates', 'Sergey Miroshnikov']
+    for name in names:
+        print(name.replace(' ', '-'))
+
+    last_names = []
+    for name in names[:5]:
+        full_name = name.split(' ')
+        print(full_name[0])
+        print(full_name[-1])
+        last_names.append(full_name[-1])
+
+    print(last_names)
+
+    # sets contains distinct elements
+    last_names.append("Momi")
+    last_names.append("Momi")
+    last_names.append("Momi")
+    last_names.append("Momi")
+    last_names.append("Momi")
+    last_names.append("Momi")
+    print(last_names)
+
+    ml = [lname for lname in last_names]  # same as ->  for lname in last_names : lname.append(lname)
+    print(ml)
+    unique_last_names = set(last_names)
+    print(unique_last_names)
+
+    print('No. of records - {}\nNo. of unique last names - {}'.format(len(last_names), len(unique_last_names)))
