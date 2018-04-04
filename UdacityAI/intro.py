@@ -68,4 +68,17 @@ if __name__ == "__main__":
     for x, y in zip(x_list, y_list):
         coords[x] = y
 
-    print (coords)
+    print(coords)
+
+    # give a default return value instead of None
+    location = coords.get(0, 'Not found')
+    print(location)
+    location = coords.get(12, 'Not found ')
+    print(location)
+    # replace a and b without temp variable
+
+    a = 1
+    b = 0
+    a, b = b, a
+
+
