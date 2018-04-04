@@ -71,9 +71,9 @@ if __name__ == "__main__":
     print(coords)
 
     # give a default return value instead of None
-    location = coords.get(0, 'Not found')
+    location = coords.get(0, 'Coordinate not present')
     print(location)
-    location = coords.get(12, 'Not found ')
+    location = coords.get(12, 'Coordinate not present')
     print(location)
     # replace a and b without temp variable
 
@@ -81,4 +81,28 @@ if __name__ == "__main__":
     b = 0
     a, b = b, a
 
+    # python for loops have an else statement
 
+    needle = 'd'
+    haystack = ['a', 'b', 'c']
+
+    for letter in haystack:
+        if needle == letter:
+            print("Found")
+    else:
+        print("Not found !")
+
+
+    # recall exceptions
+    def xonvert(x):
+        try:
+            print(int(x))
+        except:
+            print('Conversion Failed !')
+        else:
+            print('Conversion Succeeded !')
+        print("Execution Done !")
+
+
+    xonvert('12')
+    xonvert("abc")
