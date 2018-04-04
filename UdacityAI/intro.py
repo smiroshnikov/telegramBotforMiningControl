@@ -45,3 +45,11 @@ if __name__ == "__main__":
     print(unique_last_names)
 
     print('No. of records - {}\nNo. of unique last names - {}'.format(len(last_names), len(unique_last_names)))
+
+
+    # type annotations
+    def my_add(a: int, b: int) -> int:
+        return a + b
+
+
+    print(my_add(0.1, 0.3))
