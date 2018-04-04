@@ -101,8 +101,17 @@ if __name__ == "__main__":
             print('Conversion Failed !')
         else:
             print('Conversion Succeeded !')
-        print("Execution Done !")
+        finally:
+            print("Execution Done ! Ths line is always executed !")
 
 
     xonvert('12')
     xonvert("abc")
+
+    # cool fibonacci
+    def cool_fibonacci(limit):
+        a, b = 0, 1
+        for i in range(0, limit):
+            print(a)
+            a, b = b, a + b
+    cool_fibonacci(100)
