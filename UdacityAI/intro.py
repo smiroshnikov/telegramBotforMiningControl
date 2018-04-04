@@ -54,8 +54,18 @@ if __name__ == "__main__":
 
     print(my_add(0.1, 0.3))
 
-# walk thorugh a list and keep track of the positions use enumerate
-cities = ["ABC", "BCE", "CDF", "DFRE", "ERXZ"]
+    # walk thorugh a list and keep track of the positions use enumerate
+    cities = ["ABC", "BCE", "CDF", "DFRE", "ERXZ"]
 
-for i, city in enumerate(cities):
-    print(i, ":", city)
+    for i, city in enumerate(cities):
+        print(i, ":", city)
+
+    # coordinates
+    x_list = [0, 1, 2, 3]
+    y_list = [0, 3, 3, 6]
+
+    coords = {}
+    for x, y in zip(x_list, y_list):
+        coords[x] = y
+
+    print (coords)
