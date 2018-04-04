@@ -108,10 +108,17 @@ if __name__ == "__main__":
     xonvert('12')
     xonvert("abc")
 
+
     # cool fibonacci
     def cool_fibonacci(limit):
         a, b = 0, 1
         for i in range(0, limit):
             print(a)
             a, b = b, a + b
+
+
     cool_fibonacci(100)
+
+    num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    squares = [num * num for num in num_list]
+    print(squares)
