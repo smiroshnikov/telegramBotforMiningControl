@@ -117,7 +117,7 @@ if __name__ == "__main__":
             a, b = b, a + b
 
 
-    cool_fibonacci(100)
+    cool_fibonacci(1000)
 
     num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     squares = [num * num for num in num_list]
