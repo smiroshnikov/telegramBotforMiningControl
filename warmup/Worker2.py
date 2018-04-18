@@ -27,7 +27,7 @@ class Worker:
         Worker.employee_counter += 1
 
     def fullname(self):
-        return '{} {} '.format(self.first, self.last)
+        return '{} {}'.format(self.first, self.last)
 
     def full_details(self):
         return 'Full name : {} {} \nEmail: {} \nSalary: {}'.format(self.first, self.last, self.email, self.salary)
@@ -77,10 +77,32 @@ class Manager(Worker):
         else:
             self.employees = employees
 
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def rem_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
+
+    def print_employees(self):
+        print("{} employees list".format(self.fullname()))
+        for emp in self.employees:
+            print('-->', emp.fullname())
+
 
 if __name__ == "__main__":
     sm = Developer("Sergei", "Miroshnikov", 200000, 'Python')
-    print(sm.full_details())
+    ds = Developer("Daniel", "Sokolov", 280000, 'C#')
+    ag = Developer("Alexander", "Gulbit", 300000, 'C++')
+    mk = Developer("Muki", "Buhbut", 5000000, 'Visual Basic')
+
+    sb = Manager('Sergey', 'Brin', 1, [sm, ds, ag])
+    sb.print_employees()
+    sb.add_emp(mk)
+    sb.print_employees()
+    sb.rem_emp(mk)
+    sb.print_employees()
 
 # Region OLD
 #
