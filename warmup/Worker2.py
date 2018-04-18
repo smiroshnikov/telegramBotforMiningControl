@@ -103,7 +103,9 @@ if __name__ == "__main__":
     sb.print_employees()
     sb.rem_emp(mk)
     sb.print_employees()
+    print(isinstance(sm, Developer))
 
+    print(issubclass(Developer,Worker))
 # Region OLD
 #
 # emp_str1 = 'John-Doe-127000'
